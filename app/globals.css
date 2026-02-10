@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+
+.cloud{
+    animation: cloudMove 2s alternate infinite;
+}
+
+@keyframes cloudMove {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    /* 70% {
+        transform: translateX(-100%);
+        opacity: 0.5;
+    } */
+    100% {
+        opacity: 0;
+        transform: translateX(-150%);
+
+    } 
+}
+
+.cloud2{
+    animation: cloudMove2 2s alternate infinite;
+}
+@keyframes cloudMove2 {
+    0% {
+        /* opacity:  */
+        transform: translateX(0);
+    }
+    /* 70% {
+        transform: translateX(-100%);
+        opacity: 0.5;
+    } */
+    100% {
+        /* opacity: 0; */
+        transform: translateX(-150%);
+
+    } 
+}
