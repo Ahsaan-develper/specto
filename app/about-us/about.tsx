@@ -22,7 +22,7 @@ export default function About() {
 
         <button className="border-2  border-[#00ABFF] text-nowrap px-[40%] md:px-8 py-1 md:py-3.5 rounded-xl font-semibold
           bg-gradient-to-r from-[#0058FF] to-[#00ABFF] bg-clip-text text-transparent
-          hover:text-white transition
+          hover:text-white transition outline-none 
         ">
           Our Team
         </button>
@@ -31,7 +31,7 @@ export default function About() {
     {/* right  content*/}
       <div className=" md:w-1/2  flex justify-center  md:mt-0 ">
         <img
-          className="max-w-48 md:w-[70%] h-auto object-cover rounded-lg"
+          className="w-[60%] ml-4 min-w-[70%] md:w-[70%] md-[60%] lg:h-[70%]  rounded-lg"
           src="aboutus.webp"
           alt="about us"
         />

@@ -1,6 +1,6 @@
 export default function AboutFooter() {
     return (
-        <footer className="mt-20">
+        <footer className="mt-30">
             <div className="flex flex-col justify-center items-center">
                 <img className=" w-44 h-8 bg-black" src="speectoLogo.png" alt="Specto Logo" />
             <h1 className="text-black mt-10 text-3xl font-semibold">Subcribe To Our Newsletter</h1>
@@ -11,18 +11,18 @@ export default function AboutFooter() {
             </div>
             {/* pure footer */}
 
-            <div className="flex justify-around w-[80%] ml-30 mt-20">
-                <ul className="space-y-3"> 
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-around w-[80%] ml-4 md:ml-30 mt-20">
+                <ul className="space-y-3 mt-6"> 
                     <li className="font-semibold">Explore</li>
                     <li>Home</li>
                     <li>Our Team</li>
                 </ul>
-                 <ul className="space-y-3">
+                 <ul className="space-y-3 mt-6">
                     <li className="font-semibold">Resources</li>
                     <li>Contact</li>
                     <li>Services</li>
                 </ul>
-                 <ul className="space-y-3">
+                 <ul className="space-y-3 mt-6">
                     <li className="font-semibold">GetIn<span>Touch</span></li>
                     <li className="flex">
                         <span></span>
@@ -44,7 +44,7 @@ export default function AboutFooter() {
 
 {/* last part of footer  */}
 <div className="bg-[#E9ECEF] w-full  h-12 flex justify-center items-center mt-20">
-    <p className="text-[#6C757D] tracking-wide leading-7">
+    <p className="text-[#6C757D] text-center flex-1 tracking-wide leading-7">
         © 2023 Speecto Ltd is a company registered in England and Wales (Company No. 15060881)
         </p>
     </div>

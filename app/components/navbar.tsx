@@ -1,16 +1,28 @@
-
+"use client"
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+const [isMenuOPen, setIsMenuOpen] = useState(false)
+const [isScrolled , setIsScrolled] = useState(false);
+useEffect(()=>{
+    const handleScroll =() =>{
+        setIsScrolled(window.scrollY > 100);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+},[])
+
     return (
-        <main  className="bg-[#081533] fixed  flex w-full h-20 justify-around items-center    px-6 py-4">
-            <img className=" w-[50%] md:w-40 cursor-pointer items-center" src="speectoLogo.png" alt="Specto Logo" />
+        <nav  className={`bg-[#081533]    flex w-full h-22 justify-around items-center px-6 py-4 ${isScrolled ? "fixed backdrop-blur-md top-0  " : " transition-all duration-300  ease-in-out"}` }>
+            <img className=" w-[44%] sm:w-40 cursor-pointer items-center" src="speectoLogo.png" alt="Specto Logo" />
            <div className="hidden lg:flex">
-             <ul className="flex space-x-8  ml-20 items-center"> 
-                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap text-sm md:text-[19px] ml-4" ><a href="/">Home</a></li>
-                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap text-sm  md:text-[19px]"><a href="/">Services</a></li>
-                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap text-sm  md:text-[19px]"><a href="/">Contact Us</a></li>
-                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap text-sm md:text-[19px]"><a href="/ ">Our Team</a></li>
-                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap text-sm  md:text-[19px]"><a href="/about-us">About Us</a></li>
+             <ul className="flex sm:space-x-6 md:space-x-8  md:ml-20 items-center"> 
+                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]  ml-4" ><a href="/">Home</a></li>
+                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><Link href="/">Services</Link></li>
+                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><a href="/">Contact Us</a></li>
+                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><Link href="/our-team">Our Team</Link></li>
+                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px] "><a href="/about-us">About Us</a></li>
             </ul>   
            </div>
 
@@ -36,19 +48,33 @@ export default function Navbar() {
                     <div className="w-2 h-2 rounded-full bg-[#FFFFFF] absolute -top-1 left-3.5 "></div>
                 </div>
             </div>
-             <div className="lg:hidden flex flex-col space-y-1 cursor-pointer ml-4">
+             <button onClick={()=>setIsMenuOpen(!isMenuOPen)} className="lg:hidden flex flex-col space-y-1 cursor-pointer ml-4">
                     <div className="w-6 h-1 bg-[#FFFFFF]"></div>
                     <div className="w-6 h-1 bg-[#FFFFFF]"></div>
                     <div className="w-6 h-1 bg-[#FFFFFF]"></div>
-                </div>
+                </button>
            </div>
 
 
                 {/* mobile hamsurger menu */}
-         
+                <div className={` md:hidden flex flex-col items-center absolute w-[40%] sm:w-66 h-[1000%]  top-0 z-1 bg-gradient-to-b from-[#0072FD] to-[#00C3FF] transition-all duration-300 ease-linear  ${isMenuOPen ? "-translate-x-[215px] md:-translate-x-[215px]": "-translate-x-[500px] md:-translate-x-[500px]"} `}>
+                    <button onClick={()=>setIsMenuOpen(!isMenuOPen)} className="absolute top-2 right-6 font-bold text-xl text-white cursor-pointer ">x</button>
+                    <img className="w-32 py-4  mt-10  " src="speectoLogo.png"  />
+
+                    <div className="text-white mt-8  ">
+                        <ul className="sm:space-y-2 mr-10  sm:mr-44 sm:font-medium ">
+                            <li>Home</li>
+                            <li>Services</li>
+                            <li>Contact Us</li>
+                            <li>Our Team</li>
+                            <li>About Us</li>
+                        </ul>
+                    </div>
+                        <button className="w-[80%] flex justify-center items-center md:hidden cursor-pointer mt-12 sm:px-20 text-nowrap sm:font-semibold bg-white text-black h-10  rounded-lg">Get Started</button>
+
+                </div>
 
                
-        </main>
+        </nav>
     );
-}   <span>
-</span>
+}   
