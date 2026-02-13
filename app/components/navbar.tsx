@@ -14,13 +14,13 @@ useEffect(()=>{
 },[])
 
     return (
-        <nav  className={`bg-[#081533]    flex w-full h-22 justify-around items-center px-6 py-4 ${isScrolled ? "fixed backdrop-blur-md top-0  " : " transition-all duration-300  ease-in-out"}` }>
+        <nav  className={`bg-[#081533] z-50 flex w-full h-22 justify-around items-center px-6 py-4 ${isScrolled ? "fixed backdrop-blur-md top-0  " : " transition-all duration-300  ease-in-out"}` }>
             <img className=" w-[44%] sm:w-40 cursor-pointer items-center" src="speectoLogo.png" alt="Specto Logo" />
            <div className="hidden lg:flex">
              <ul className="flex sm:space-x-6 md:space-x-8  md:ml-20 items-center"> 
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]  ml-4" ><a href="/">Home</a></li>
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><Link href="/">Services</Link></li>
-                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><a href="/">Contact Us</a></li>
+                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><a href="/contact">Contact Us</a></li>
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><Link href="/our-team">Our Team</Link></li>
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px] "><a href="/about-us">About Us</a></li>
             </ul>   
@@ -57,22 +57,50 @@ useEffect(()=>{
 
 
                 {/* mobile hamsurger menu */}
-                <div className={` md:hidden flex flex-col items-center absolute w-[40%] sm:w-66 h-[1000%]  top-0 z-1 bg-gradient-to-b from-[#0072FD] to-[#00C3FF] transition-all duration-300 ease-linear  ${isMenuOPen ? "-translate-x-[215px] md:-translate-x-[215px]": "-translate-x-[500px] md:-translate-x-[500px]"} `}>
-                    <button onClick={()=>setIsMenuOpen(!isMenuOPen)} className="absolute top-2 right-6 font-bold text-xl text-white cursor-pointer ">x</button>
-                    <img className="w-32 py-4  mt-10  " src="speectoLogo.png"  />
+               <div
+        className={`
+          fixed top-0 left-0 h-screen w-64
+          bg-gradient-to-b from-[#0072FD] to-[#00C3FF]
+          transform transition-transform duration-300
+          ${isMenuOPen ? "translate-x-0" : "-translate-x-full"}
+          z-50
+        `}
+      >
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="absolute top-4 right-4 text-white text-xl cursor-pointer font-bold"
+        >
+          ✕
+        </button>
 
-                    <div className="text-white mt-8  ">
-                        <ul className="sm:space-y-2 mr-10  sm:mr-44 sm:font-medium ">
-                            <li>Home</li>
-                            <li>Services</li>
-                            <li>Contact Us</li>
-                            <li>Our Team</li>
-                            <li>About Us</li>
-                        </ul>
-                    </div>
-                        <button className="w-[80%] flex justify-center items-center md:hidden cursor-pointer mt-12 sm:px-20 text-nowrap sm:font-semibold bg-white text-black h-10  rounded-lg">Get Started</button>
+        <img src="speectoLogo.png" className="w-32 mx-auto mt-10" />
 
-                </div>
+        <ul className="mt-10 space-y-6 text-white text-center">
+          {[
+            { name: "Home", href: "/" },
+            { name: "Services", href: "/" },
+            { name: "Contact Us", href: "/" },
+            { name: "Our Team", href: "/our-team" },
+            { name: "About Us", href: "/about-us" },
+          ].map((item) => (
+            <li key={item.name}>
+              <Link
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="mt-10 mx-auto block w-[80%] bg-white text-black py-2 rounded-lg font-semibold"
+        >
+          Get Started
+        </button>
+      </div>
 
                
         </nav>
