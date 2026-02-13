@@ -44,6 +44,41 @@
   clip-path: polygon(0% 30%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.clip-full {
-  clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    
+
+.bulb-blink {
+    animation: Bulb 2s linear infinite;
+}
+
+@keyframes Bulb {
+   from {
+    filter: brightness(10px);
+   }
+   to{
+    filter: brightness(20px);
+   }
+}
+
+.move-left-right{
+    animation: left-right 2s ease-in alternate infinite;
+}
+
+@keyframes left-right{
+    from  {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-20px);
+    }
+}
+.move-upward {
+    animation: Upward 2s ease-in alternate infinite;
+}
+@keyframes Upward {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(30px);
+    }
 }

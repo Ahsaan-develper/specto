@@ -19,7 +19,7 @@ useEffect(()=>{
            <div className="hidden lg:flex">
              <ul className="flex sm:space-x-6 md:space-x-8  md:ml-20 items-center"> 
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]  ml-4" ><a href="/">Home</a></li>
-                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><Link href="/">Services</Link></li>
+                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><Link href="/services">Services</Link></li>
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><a href="/contact">Contact Us</a></li>
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><Link href="/our-team">Our Team</Link></li>
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px] "><a href="/about-us">About Us</a></li>
@@ -78,8 +78,8 @@ useEffect(()=>{
         <ul className="mt-10 space-y-6 text-white text-center">
           {[
             { name: "Home", href: "/" },
-            { name: "Services", href: "/" },
-            { name: "Contact Us", href: "/" },
+            { name: "Services", href: "/services" },
+            { name: "Contact Us", href: "/contact" },
             { name: "Our Team", href: "/our-team" },
             { name: "About Us", href: "/about-us" },
           ].map((item) => (
