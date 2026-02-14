@@ -29,7 +29,9 @@ export default function Started() {
                 <label className=" font-semibold mb-2">Your Message</label>
                 <textarea className="border border-[#b9c7d898] px-4 py-2  w-full outline-none h-24 rounded-md " name="" id="" cols={30} rows={10} placeholder="Write your message..."></textarea>
            </div>
-           <button className="border-2 border-[#0082FF]  bg-gradient-to-r from-[#0058FF] to-[#00ABFF] text-transparent bg-clip-text  px-10 py-3 font-semibold rounded-xl  ">Submit
+           <button className="border-2 cursor-pointer group relative border-[#0082FF]  overflow-hidden  px-10 py-3 font-semibold rounded-xl  ">
+            <span className="z-10 relative group-hover:text-white bg-gradient-to-r  from-[#0058FF] to-[#00ABFF] text-transparent bg-clip-text ">Submit</span>
+            <span className="w-0 h-full  absolute  top-0 left-0  bg-gradient-to-r from-[#0058FF] to-[#00ABFF]  transition-all duration-300 group-hover:w-full"></span>
            </button>
            
         </main>

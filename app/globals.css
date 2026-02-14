@@ -44,18 +44,21 @@
   clip-path: polygon(0% 30%, 100% 0%, 100% 100%, 0% 100%);
 }
 
+.clip-full {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
     
 
 .bulb-blink {
-    animation: Bulb 2s linear infinite;
+    animation: Bulb 3s ease-in infinite;
 }
 
 @keyframes Bulb {
    from {
-    filter: brightness(10px);
+    filter: brightness(1);
    }
    to{
-    filter: brightness(20px);
+    filter: brightness(1.5);
    }
 }
 
@@ -82,3 +85,32 @@
         transform: translateY(30px);
     }
 }
+
+
+
+.rotate-block {
+  animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* .rotating {
+    animation: Rotate 5s linear infinite;
+}
+
+@keyframes Rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} */

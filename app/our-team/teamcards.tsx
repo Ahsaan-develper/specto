@@ -28,7 +28,7 @@ export default function TeamCards() {
       {teamCards.map((img, index) => (
         <div
           key={index}
-          className="relative w-full h-96 overflow-hidden rounded-3xl group"
+          className="relative cursor-pointer w-full h-96 overflow-hidden rounded-3xl group"
         >
           <img
             src={img}
@@ -39,10 +39,13 @@ export default function TeamCards() {
           <div className="
             absolute bottom-0 left-0 right-0
             h-32 group-hover:h-full transition-all duration-500
-            bg-gradient-to-tr from-[#0056FFCC] to-[#00BBFF99]
+             bg-[#303030]/90
+            group-hover:bg-gradient-to-tr from-[#0056FFCC] to-[#00BBFF99]
             text-white p-4 flex flex-col justify-end
             clip-slant 
+            group-hover:clip-full
           ">
+              
             <h2 className="text-xl font-semibold group-hover:hidden">
               {name[index]}
             </h2>

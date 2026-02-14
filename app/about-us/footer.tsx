@@ -5,8 +5,8 @@ export default function AboutFooter() {
                 <img className=" w-44 h-8 bg-black mb-8 invert" src="speectoLogo.png" alt="Specto Logo" />
             <h1 className="text-black  mb-8 text-2xl sm:text-3xl font-semibold">Subcribe To Our Newsletter</h1>
             <div className="flex flex-col sm:flex-row w-full max-w-4xl ">
-                <input className="w-full  outline-1 py-2 px-4   rounded-xl sm:rounded-l-xl sm:rounded-tr-none border outline-none" type="text" placeholder="Email" />
-                <button className="bg-black px-10 text-2xl py-2 rounded-r-xl text-white ">Subcribe</button>
+                <input className="w-full  outline-1 py-2 px-4   rounded-xl  md:rounded-r-none border outline-none" type="text" placeholder="Email" />
+                <button className="bg-black px-10 text-2xl py-2  rounded-xl  md:rounded-l-none text-white ">Subcribe</button>
             </div>
             </div>
             {/* pure footer */}

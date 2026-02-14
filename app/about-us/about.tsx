@@ -18,12 +18,10 @@ export default function About() {
           the development of key enterprise solutions including.
         </p>
 
-        <button className="border-2 w-full md:max-w-40 border-[#00ABFF] text-nowrap px-6 py-3  md:py-3.5 rounded-xl font-semibold
-          bg-gradient-to-r from-[#0058FF] to-[#00ABFF] bg-clip-text text-transparent
-          hover:text-white transition outline-none 
-        ">
-          Our Team
-        </button>
+         <button className="border-2 cursor-pointer group relative border-[#0082FF]  overflow-hidden  px-10 py-3 font-semibold rounded-xl  ">
+            <span className="z-10 relative group-hover:text-white bg-gradient-to-r  from-[#0058FF] to-[#00ABFF] text-transparent bg-clip-text ">Our Team</span>
+            <span className="w-0 h-full  absolute  top-0 left-0  bg-gradient-to-r from-[#0058FF] to-[#00ABFF]  transition-all duration-300 group-hover:w-full"></span>
+           </button>
       </div>
 
     {/* right  content*/}
