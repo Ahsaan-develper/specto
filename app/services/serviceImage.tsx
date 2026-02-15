@@ -1,10 +1,10 @@
 export default function ServiceImage (){
     
     return  (
-       <section className="relative">
+       <section className="">
             <div className="">
-                <img className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-46" src="reactIcon2.webp" alt="" />
-                <div className="">
+                <img className=" relative object-cover w-26 h-26   md:w-44 md:h-44" src="reactIcon2.webp" alt="" />
+                <div className=" absolute top-60 right-0">
                     <span className="bg-white h-8 rounded-full w-8 -top-20  right-60 absolute"></span>
                     <span className="bg-white h-1 rounded-full w-1 -top-10  right-57  absolute"></span>
                     <span className="border border-red-500 h-2 rounded-full -top-8  right-52  w-2 absolute"></span>
@@ -39,13 +39,16 @@ export default function ServiceImage (){
                     <span className="bg-white h-1 rounded-full w-1 -top-14  right-70   absolute"></span>
                     
                 </div>
-                <div className=" absolute right-36  rotate-block w-60 h-64 -top-12">
-                    <span className=" absolute broder-1 border-white translate-54 w-10 h-10 bg-white rounded-full"></span>
-                    <span className=" absolute right-0 broder-1 border-white   w-10 h-10 bg-white rounded-full"></span>
-                    <span className=" absolute bottom-0 broder-1 border-white   w-10 h-10 bg-white rounded-full"></span>
-                    <span className=" absolute broder-1 top-0 border-white   w-10 h-10 bg-white rounded-full"></span>
+                <div className="absolute inset-0 flex justify-end right-30 top-40">
+          <div className="rotate-block relative w-70 h-70">
 
-                </div>
+            <img className="absolute top-0 left-1/2 border-2 bg-[#0F0563] border-white -translate-x-1/2 w-10 h-10  rounded-full" src="bannerReactCircle1.webp"/>
+            <img className="absolute border-2 bg-[#0F0563]  border-white right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full" src="bannerReactCircle4.webp"/>
+            <img className="absolute  border-2  bg-[#0F0563] border-white bottom-0 left-1/2 -translate-x-1/2 w-10 h-10  rounded-full" src="bannerReactCircle3.webp" />
+            <img className="absolute  border-2 bg-[#0F0563] border-white left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full" src="bannerReactCircle4.webp" />
+
+          </div>
+        </div>
             </div>
        </section>
     );
