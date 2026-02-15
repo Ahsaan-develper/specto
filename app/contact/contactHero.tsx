@@ -1,5 +1,6 @@
 
 
+
 export default function ContactHero (){
    
     return (
@@ -22,6 +23,9 @@ export default function ContactHero (){
             <img className=" move-upward  absolute object-contain top-4 right-64 w-full h-full max-w-40 max-h-50" src="contactUsAnimatePegon.webp" alt="sparrow" />
              </div>
            </div>
+     
+
+           
 
         </section>
     );
