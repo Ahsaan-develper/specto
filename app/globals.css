@@ -127,3 +127,63 @@
         transform: rotate(360deg);
     }
 } */
+
+
+
+
+.blink {
+    animation: Blink_Keyboard 2s ease-in infinite;
+
+}
+@keyframes Blink_Keyboard {
+    from{
+        filter: brightness(0.5);
+    }
+    to{
+        filter: brightness(1);
+    }
+}
+
+
+.lid {
+    animation: Lid 3s linear;
+}
+@keyframes Lid {
+    from{
+        transform: rotatex(0deg);
+    }
+    to{
+        transform: rotatex(36deg);
+    }
+}
+
+.bounce{
+    animation: Bounce 4s linear  infinite;
+}
+@keyframes Bounce {
+  0%, 100% {
+    transform: translateY(0); /* Starting and ending at the bottom */
+    /* Speeds up as it falls (ease-in) */
+    /* animation-timing-function: cubic-bezier(0.8, 0, 1, 1);  */
+  }
+  50% {
+    transform: translateY(-40px); /* The highest point of the bounce */
+    /* Slows down as it reaches the top (ease-out) */
+    /* animation-timing-function: cubic-bezier(0, 0, 0.2, 1);  */
+  }
+}
+.bounce2{
+    animation: Bounce2 4s linear  infinite;
+}
+@keyframes Bounce2 {
+  0%, 100% {
+    transform: translateY(-40px); /* Starting and ending at the bottom */
+    /* Speeds up as it falls (ease-in) */
+    /* animation-timing-function: cubic-bezier(0.8, 0, 1, 1);  */
+  }
+  50% {
+    transform: translateY(0px); /* The highest point of the bounce */
+    /* Slows down as it reaches the top (ease-out) */
+    /* animation-timing-function: cubic-bezier(0, 0, 0.2, 1);  */
+  }
+}
