@@ -187,3 +187,80 @@
     /* animation-timing-function: cubic-bezier(0, 0, 0.2, 1);  */
   }
 }
+
+.man_bounce{
+    animation: man_Bounce 3s linear alternate infinite;
+}
+@keyframes man_Bounce {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
+}
+
+.rotate {
+    animation: Rotate 2s  alternate infinite;
+
+}
+@keyframes Rotate {
+    from{
+        transform: rotate(360deg);
+    }
+    to{
+          transform: rotate(0deg);
+    }
+}
+
+.left_move{
+    animation: Move_left 2s alternate infinite;
+}
+@keyframes Move_left {
+    from {
+        transform: translateX(-50px);
+    }
+    to{
+         transform: translateX(40px);
+    }
+}
+
+.move_right {
+  animation: moveRight 3s  linear infinite alternate;
+}
+@keyframes moveRight {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-45px, -45px);
+    opacity: 0;
+  }
+}
+
+.up{
+    animation: Up 1.5s linear infinite alternate;
+}
+
+@keyframes Up {
+    from{
+        transform: translatey(-40px);
+    }
+    to{
+        transform: translatey(10px);
+    }
+}
+
+
+::-webkit-scrollbar-track{
+    background-color: #FCFCFC;
+      border-radius: 10px;
+    margin: 20px 0;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #636363;
+    border-radius: 10px;
+    border: 3px solid #FCFCFC; 
+} 

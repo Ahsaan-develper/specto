@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
 const [isMenuOPen, setIsMenuOpen] = useState(false)
 const [isScrolled , setIsScrolled] = useState(false);
+const [active , setActive] = useState("");
 useEffect(()=>{
     const handleScroll =() =>{
         setIsScrolled(window.scrollY > 100);
@@ -13,16 +14,42 @@ useEffect(()=>{
     return () => window.removeEventListener("scroll", handleScroll);
 },[])
 
+
+const links = [
+   { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Our Team", href: "/our-team" },
+    { name: "About Us", href: "/about-us" },
+]
     return (
-        <nav  className={`bg-[#081533] z-50 flex w-full h-22 justify-around items-center px-6 py-4 ${isScrolled ? "fixed backdrop-blur-md top-0  " : " transition-all duration-300  ease-in-out"}` }>
+        <nav  className={`bg-[#081533] z-20 flex w-full h-22 justify-around items-center px-6 py-4  ${isScrolled ? "fixed  -top-10 translate-y-10 transition-all duration-600 " : ""}` }>
             <img className=" w-[44%] sm:w-40 cursor-pointer items-center" src="speectoLogo.png" alt="Specto Logo" />
            <div className="hidden lg:flex">
              <ul className="flex sm:space-x-6 md:space-x-8  md:ml-20 items-center"> 
-                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]  ml-4" ><a href="/">Home</a></li>
+                {/* <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]  ml-4" ><a href="/">Home</a></li>
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><Link href="/services">Services</Link></li>
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><a href="/contact">Contact Us</a></li>
                 <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px]"><Link href="/our-team">Our Team</Link></li>
-                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px] "><a href="/about-us">About Us</a></li>
+                <li className="cursor-pointer  text-[#6A6A6A] text-nowrap sm:text-[16px] md:text-[19px] "><a href="/about-us">About Us</a></li> */}
+                {
+                  links.map((link)=>{
+                   return <li key={link.name} className="relative cursor-pointer text-[#6A6A6A] text-base md:text-lg">
+                      <Link
+                      href={link.href}
+                      onClick={()=>setActive(link.name)}
+                      className={`${active === link.name  ? "text-white" : ""}
+                       duration-300`}
+                      >
+                        {link.name}
+                        </Link>
+                        {/* bottom border  */}
+                        {active ===link.name && (
+                          <span className="absolute left-1/2 -bottom-1 w-full max-w-[30%] bg-white h-[4px] -translate-x-1/2 rounded-full"></span>
+                        )}
+                    </li>
+                  })
+}
             </ul>   
            </div>
 
